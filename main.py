@@ -1,4 +1,4 @@
-import gspread
+import google_sheet
 from tkinter import *
 from tkinter import ttk
 import time
@@ -43,20 +43,11 @@ PLAYER.pack()
 player_input = Entry(master)
 player_input.pack()
 
-# All the Roll number.
-ROLL_NUMBER = {
-  12141360: "Ratnakar Gautam",
-  123: "Adil"
-}
-
-# Output the name after marking the attendence.
-def output_name():
-    name.config(text=f"Marked {ROLL_NUMBER[int(player_input.get())]}",fg="green")
-
 # Function on marking attendence
 def mark_attendence():
     print(game_input.get()," ",player_input.get(), " ", type(player_input.get()))
-    output_name()
+    ROLL_NUMBER = google_sheet.hello(player_input.get())    
+    name.config(text=f"Marked {ROLL_NUMBER}",fg="green")
 
 # Attendence Mark button
 mark_button = Button(master,text="Mark Attendence", padx=5,pady=2, command=mark_attendence)

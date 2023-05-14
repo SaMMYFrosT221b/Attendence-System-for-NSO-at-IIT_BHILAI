@@ -15,7 +15,6 @@ CURRENT_TIME = time.ctime(time.time())
 
 # All the games
 game_options = ["Badminton", "Football", "Basketball","Table Tenis","Chess","Vollyball", "Cricket","Yoga"]
-players = ["Ratnakar Gautam","Adil", "Roushan Kumar"]
 
 # Displaying NSO Attendence System (IIT BHILAI)
 x = Label(master,text="NSO Attendence System (IIT BHILAI)",background="#D1DBBD",padx=20, pady=10)
